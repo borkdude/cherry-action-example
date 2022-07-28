@@ -1,0 +1,29 @@
+{
+  "name": "nbb-action-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "action": "nbb action.cljs",
+    "prebundle": "nbb bundle action.cljs -o out.mjs",
+    "bundle": "ncc build out.mjs -m"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/borkdude/nbb-action-example.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/borkdude/nbb-action-example/issues"
+  },
+  "homepage": "https://github.com/borkdude/nbb-action-example#readme",
+  "dependencies": {
+    "@actions/core": "^1.5.0",
+    "@actions/github": "^5.0.0",
+    "@vercel/ncc": "^0.34.0",
+    "nbb": "^0.6.122"
+  }
+}
