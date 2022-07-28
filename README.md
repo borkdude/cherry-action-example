@@ -1,16 +1,16 @@
-# nbb-action-example
+# cherry-action-example
 
-This is an example of how to use [nbb](https://github.com/borkdude/nbb), an
-ad-hoc CLJS scripting tool for Node.js, to implement a Github action.
+This is an example of how to use [cherry](https://github.com/borkdude/cherry), a JS-tooling friendly CLJS compiler, to implement a Github action.
 
 This action prints "Hello World" or "Hello" + the name of a person to greet to the log.
 
 It was created using
 [this](https://docs.github.com/en/actions/creating-actions/creating-a-javascript-action)
-tutorial but instead of JavaScript it uses a small JS wrapper `index.mjs` + the
-actual CLJS script `action.cljs`.
+tutorial.
 
 ## Running locally
+
+Edit `action.cljs`, the ClojureScript source for this action.
 
 Run:
 
@@ -18,15 +18,12 @@ Run:
 npm run action
 ```
 
-to run the action locally.
+to run the action locally. This will produce `action.mjs` which will be run by Node.js.
 
 ## Bundle
 
-To bundle `action.cljs` using `ncc`, run: `npm run bundle`.  This will create
+To bundle `action.mjs` using `ncc`, run: `npm run bundle`.  This will create
 the standalone JS file `dist/index.mjs`.
-
-See [bundle](https://github.com/babashka/nbb/tree/main/doc/bundle) for more
-details.
 
 ## Inputs
 
@@ -52,7 +49,7 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: borkdude/nbb-action-example@v0.1.0
+        uses: borkdude/cherry-action-example@v0.1.0
         with:
           who-to-greet: 'Mona the Octocat'
       # Use the output from the `hello` step
