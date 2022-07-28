@@ -1,29 +1,30 @@
 {
-  "name": "nbb-action-example",
+  "name": "cherry-action-example",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "action": "nbb action.cljs",
-    "prebundle": "nbb bundle action.cljs -o out.mjs",
-    "bundle": "ncc build out.mjs -m"
+    "action": "cherry run action.cljs",
+    "bundle": "ncc build action.mjs -m"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/borkdude/nbb-action-example.git"
+    "url": "git+https://github.com/borkdude/cherry-action-example.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/borkdude/nbb-action-example/issues"
+    "url": "https://github.com/borkdude/cherry-action-example/issues"
   },
-  "homepage": "https://github.com/borkdude/nbb-action-example#readme",
+  "homepage": "https://github.com/borkdude/cherry-action-example#readme",
   "dependencies": {
     "@actions/core": "^1.5.0",
     "@actions/github": "^5.0.0",
-    "@vercel/ncc": "^0.34.0",
-    "nbb": "^0.6.122"
+    "cherry-cljs": "0.0.0-alpha.34"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.34.0"
   }
 }
